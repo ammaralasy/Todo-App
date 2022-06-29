@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import TaskInput from './taskInput';
 import Filters from './filters';
 import TasksList from './tasksList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // ALL | COMPLETED | NOT_COMPLETED
 function App() {

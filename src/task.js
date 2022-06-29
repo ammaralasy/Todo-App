@@ -1,11 +1,13 @@
-const Task = ({task, checkDone, removeTask}) => {
+import { Alert, Button } from 'react-bootstrap';
+const Task = ({ task, checkDone, removeTask }) => {
 	return (
-		<div className='list' key={task.id}>
-			<li className={task.complete ? 'line-through' : ''}>{task.text}</li>
-			<button onClick={() => checkDone(task.id)}>
-				{task.complete ? 'uncheck' : 'check'}
-			</button>
-			<button onClick={() => removeTask(task.id)}>remove</button>
+		<div key={task.id}>
+			<Alert  className= {task.complete ? "line-through list w-50 p-3  d-flex justify-content-between container":"list w-50 p-3  d-flex justify-content-between container"} variant={task.complete ? "dark" : "info"}>
+				{task.text}
+				<div><Button onClick={() => checkDone(task.id)} variant={task.complete ? "success" : "warning"}>{task.complete ? 'uncheck' : 'check'}</Button>
+					<Button onClick={() => removeTask(task.id)} variant="danger">Remove</Button>
+				</div>
+			</Alert>
 		</div>
 	);
 };

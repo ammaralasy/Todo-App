@@ -1,10 +1,11 @@
+import {Button} from "react-bootstrap";
 const Filters = ({updateFilter, uncheckAll}) => {
 	return (
 		<div>
-			<button onClick={() => updateFilter('NON_COMPLETE')}>Show Incomplete</button>
-			<button onClick={() => updateFilter('COMPLETE')}>Show Complete</button>
-			<button onClick={() => updateFilter('ALL')}>Show All</button>
-			<button onClick={uncheckAll}>Uncheck All</button>
+			 <Button className="mb-5 me-2" onClick={() => updateFilter('NON_COMPLETE')} variant="info">Show Incomplete</Button>
+			 <Button className="mb-5 me-2"  onClick={() => updateFilter('COMPLETE')} variant="primary">Show Complete</Button>
+			 <Button className="mb-5 me-2"  onClick={() => updateFilter('ALL')} variant="success">Show All</Button>
+			 <Button className="mb-5"  onClick={uncheckAll} variant="danger">Uncheck All</Button>
 		</div>
 	);
 };
